@@ -219,7 +219,7 @@ const IntroOverlay = ({ onComplete }) => {
               left: 0,
               width: '100%',
               height: '100%',
-              background: 'linear-gradient(120deg, transparent 40%, rgba(196, 22, 28, 0.3) 50%, transparent 0%)',
+              background: 'linear-gradient(120deg, transparent 40%, rgba(237, 28, 36, 0.3) 50%, transparent 0%)',
               mixBlendMode: 'color-dodge',
               pointerEvents: 'none',
               filter: 'blur(8px)'
@@ -272,3 +272,4 @@ const IntroOverlay = ({ onComplete }) => {
 };
 
 export default IntroOverlay;
+

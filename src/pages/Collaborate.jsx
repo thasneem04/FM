@@ -57,7 +57,7 @@ const Collaborate = () => {
     transition: { duration: 0.6, ease: "easeOut" }
   };
 
-  const red = "#d10000";
+  const red = "#ED1C24";
 
   return (
     <div style={{ backgroundColor: '#FFFFFF', color: '#1A1A1A', overflow: 'hidden' }}>
@@ -65,7 +65,7 @@ const Collaborate = () => {
       {/* Hero Section */}
       <section style={{ 
         padding: 'clamp(120px, 15vw, 160px) 5% 80px', 
-        background: 'linear-gradient(180deg, rgba(209, 0, 0, 0.05) 0%, #FFFFFF 100%)',
+        background: 'linear-gradient(180deg, rgba(237, 28, 36, 0.05) 0%, #FFFFFF 100%)',
         textAlign: 'center'
       }}>
         <div className="container">
@@ -116,7 +116,7 @@ const Collaborate = () => {
                   borderRadius: '50px',
                   fontWeight: 700,
                   textDecoration: 'none',
-                  boxShadow: `0 10px 25px rgba(209, 0, 0, 0.2)`
+                  boxShadow: `0 10px 25px rgba(237, 28, 36, 0.2)`
                 }}
               >
                 Connect With Your Consultant
@@ -199,7 +199,7 @@ const Collaborate = () => {
                 padding: '2.5rem',
                 borderRadius: '30px',
                 color: '#FFF',
-                boxShadow: `0 20px 40px rgba(209, 0, 0, 0.2)`
+                boxShadow: `0 20px 40px rgba(237, 28, 36, 0.2)`
               }}>
                <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1rem' }}>Ready to Scale?</h3>
                <p style={{ fontSize: '1rem', opacity: 0.9, lineHeight: 1.6, marginBottom: '1.5rem' }}>
@@ -282,4 +282,5 @@ const Collaborate = () => {
 };
 
 export default Collaborate;
+
 

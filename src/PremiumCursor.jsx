@@ -69,9 +69,9 @@ const PremiumCursor = () => {
           height: hover ? 52 : 38,
           borderRadius: "50%",
           background: "rgba(255,255,255,0.04)",
-          border: "1.5px solid rgba(196,22,28,0.9)",
+          border: "1.5px solid rgba(237,28,36,0.9)",
           boxShadow: `
-            0 0 20px rgba(196,22,28,0.45),
+            0 0 20px rgba(237,28,36,0.45),
             inset 0 0 6px rgba(255,255,255,0.3)
           `,
           backdropFilter: "blur(6px)",
@@ -87,3 +87,4 @@ const PremiumCursor = () => {
 };
 
 export default PremiumCursor;
+

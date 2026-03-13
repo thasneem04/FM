@@ -11,7 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  const red = "#d10000";
+  const red = "#ED1C24";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'About', href: isHome ? '#about' : '/#about' },
     { name: 'SFMS', href: isHome ? '#sfms' : '/#sfms' },
-    { name: 'Odoo ERP', href: isHome ? '#odoo-erp' : '/#odoo-erp' },
+    { name: 'ERP', href: isHome ? '#erp' : '/#erp' },
   ];
 
   const serviceItems = [
@@ -155,7 +155,7 @@ const Navbar = () => {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.background = 'rgba(209, 0, 0, 0.05)';
+                        e.currentTarget.style.background = 'rgba(237, 28, 36, 0.05)';
                         e.currentTarget.style.color = red;
                       }}
                       onMouseOut={(e) => {
@@ -182,7 +182,7 @@ const Navbar = () => {
             fontSize: '0.9rem',
             fontWeight: 700,
             textDecoration: 'none',
-            boxShadow: `0 10px 20px rgba(209, 0, 0, 0.2)`
+            boxShadow: `0 10px 20px rgba(237, 28, 36, 0.2)`
           }}
         >
           Start Project
@@ -260,7 +260,7 @@ const Navbar = () => {
                 </Link>
                 <button 
                   onClick={() => setIsOpen(false)}
-                  style={{ background: 'rgba(196,22,28,0.08)', borderRadius: '50%', border: 'none', color: '#1A1A1A', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ background: 'rgba(237, 28, 36, 0.08)', borderRadius: '50%', border: 'none', color: '#1A1A1A', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   <X size={24} color={red} />
                 </button>
@@ -320,7 +320,7 @@ const Navbar = () => {
                     textAlign: 'center',
                     textDecoration: 'none',
                     marginTop: '1.5rem',
-                    boxShadow: '0 10px 20px rgba(196,22,28,0.2)'
+                    boxShadow: '0 10px 20px rgba(237,28,36,0.2)'
                   }}
                 >
                   Start Project →

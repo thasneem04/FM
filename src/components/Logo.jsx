@@ -14,7 +14,7 @@ const Logo = ({ className, size = 32 }) => {
         onError={(e) => {
           e.target.onerror = null; 
           e.target.style.display = 'none';
-          e.target.parentNode.innerHTML = '<span style="color:#C4161C; font-weight:800; font-size:' + size + 'px">M</span>';
+          e.target.parentNode.innerHTML = '<span style="color:#ED1C24; font-weight:800; font-size:' + size + 'px">M</span>';
         }}
       />
     </div>
@@ -22,3 +22,4 @@ const Logo = ({ className, size = 32 }) => {
 };
 
 export default Logo;
+

@@ -36,7 +36,7 @@ const OdooERP = () => {
               borderRadius: '32px',
               padding: '1.5rem',
               boxShadow: '0 40px 80px rgba(0,0,0,0.06)',
-              border: '1px solid rgba(196, 22, 28, 0.05)',
+              border: '1px solid rgba(237, 28, 36, 0.05)',
               position: 'relative',
               zIndex: 2,
               overflow: 'hidden'
@@ -74,7 +74,7 @@ const OdooERP = () => {
             style={{ order: window.innerWidth > 768 ? 2 : 1 }}
           >
             <span style={{ 
-              color: '#C4161C', 
+              color: '#ED1C24', 
               fontWeight: 600, 
               textTransform: 'uppercase', 
               letterSpacing: '2px',
@@ -85,7 +85,7 @@ const OdooERP = () => {
               Business Solutions
             </span>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.1 }}>
-              ERP SOLUTIONS WITH <span style={{ color: '#C4161C' }}>ODOO</span>
+              ERP SOLUTIONS WITH <span style={{ color: '#ED1C24' }}>ODOO</span>
             </h2>
             <p style={{ color: '#666666', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
               We help businesses streamline their operations using the Odoo ERP platform. Our end-to-end Odoo services ensure your business processes are integrated, efficient, and ready for global scalability.
@@ -102,12 +102,12 @@ const OdooERP = () => {
                     color: '#444444', 
                     fontSize: '0.95rem',
                     padding: '0.8rem 1.2rem',
-                    background: 'rgba(196, 22, 28, 0.02)',
+                    background: 'rgba(237, 28, 36, 0.02)',
                     borderRadius: '12px',
-                    border: '1px solid rgba(196, 22, 28, 0.05)',
+                    border: '1px solid rgba(237, 28, 36, 0.05)',
                     transition: 'all 0.3s ease'
                   }}>
-                    <div style={{ color: '#C4161C' }}>{service.icon}</div>
+                    <div style={{ color: '#ED1C24' }}>{service.icon}</div>
                     <span style={{ fontWeight: 500 }}>{service.title}</span>
                   </div>
                 ))}
@@ -125,4 +125,5 @@ const OdooERP = () => {
 };
 
 export default OdooERP;
+
 

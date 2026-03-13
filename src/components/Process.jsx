@@ -40,7 +40,7 @@ const Process = () => {
           transition={{ duration: 0.6 }}
           style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', marginBottom: '4rem', fontWeight: 800 }}
         >
-          Our <span style={{ color: '#C4161C' }}>Process</span>:
+          Our <span style={{ color: '#ED1C24' }}>Process</span>:
         </motion.h2>
         
         {/* Process Timeline */}
@@ -60,7 +60,7 @@ const Process = () => {
             left: '10%',
             right: '10%',
             height: '2px',
-            background: '#C4161C',
+            background: '#ED1C24',
             zIndex: 1,
             display: window.innerWidth > 991 ? 'block' : 'none'
           }} />
@@ -84,7 +84,7 @@ const Process = () => {
               <div style={{
                 width: '36px',
                 height: '36px',
-                background: '#C4161C',
+                background: '#ED1C24',
                 color: '#FFFFFF',
                 borderRadius: '50%',
                 display: 'flex',
@@ -94,7 +94,7 @@ const Process = () => {
                 fontWeight: 800,
                 marginBottom: '1.5rem',
                 zIndex: 3,
-                boxShadow: '0 4px 10px rgba(196, 22, 28, 0.3)'
+                boxShadow: '0 4px 10px rgba(237, 28, 36, 0.3)'
               }}>
                 {step.num}
               </div>
@@ -110,11 +110,11 @@ const Process = () => {
                 marginBottom: '1.5rem',
                 boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
                 color: '#1A1A1A',
-                border: '2px solid rgba(196, 22, 28, 0.05)',
+                border: '2px solid rgba(237, 28, 36, 0.05)',
                 transition: 'all 0.3s ease',
               }} className="process-icon-box">
                 <div style={{
-                  color: index === 4 || index === 2 ? '#C4161C' : '#333'
+                  color: index === 4 || index === 2 ? '#ED1C24' : '#333'
                 }}>
                   {step.icon}
                 </div>
@@ -130,7 +130,7 @@ const Process = () => {
               }}>
                 {step.title.split(' ').map((word, i, arr) => (
                   <React.Fragment key={i}>
-                    {word} {i === arr.length - 1 && index === 4 ? <span style={{ color: '#C4161C' }}>Optimization</span> : ''}
+                    {word} {i === arr.length - 1 && index === 4 ? <span style={{ color: '#ED1C24' }}>Optimization</span> : ''}
                     {i !== arr.length - 1 && ' '}
                   </React.Fragment>
                 ))}
@@ -139,7 +139,7 @@ const Process = () => {
               {/* Arrow connector for responsive view */}
               {index < steps.length - 1 && (
                  <div className="process-arrow" style={{
-                    color: '#C4161C',
+                    color: '#ED1C24',
                     position: 'absolute',
                     right: '-15%',
                     top: '90px',
@@ -171,11 +171,11 @@ const Process = () => {
             left: '-50%',
             width: '40%',
             height: '1px',
-            background: 'rgba(196, 22, 28, 0.3)'
+            background: 'rgba(237, 28, 36, 0.3)'
           }} className="divider-line" />
           
           <p style={{ fontSize: '1.3rem', color: '#666666' }}>
-            We build <span style={{ color: '#C4161C', fontWeight: 600 }}>scalable</span> systems designed for <span style={{ color: '#C4161C', fontWeight: 600 }}>long-term<br/>Sustainability</span>.
+            We build <span style={{ color: '#ED1C24', fontWeight: 600 }}>scalable</span> systems designed for <span style={{ color: '#ED1C24', fontWeight: 600 }}>long-term<br/>Sustainability</span>.
           </p>
 
           <div style={{
@@ -184,7 +184,7 @@ const Process = () => {
             right: '-50%',
             width: '40%',
             height: '1px',
-            background: 'rgba(196, 22, 28, 0.3)'
+            background: 'rgba(237, 28, 36, 0.3)'
           }} className="divider-line" />
         </motion.div>
 
@@ -220,15 +220,15 @@ const Process = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginBottom: '1.5rem',
-                color: '#C4161C',
-                border: '2px solid rgba(196, 22, 28, 0.03)'
+                color: '#ED1C24',
+                border: '2px solid rgba(237, 28, 36, 0.03)'
               }}>
                 {feature.icon}
               </div>
               <h3 style={{ 
                 fontSize: '1.5rem', 
                 fontWeight: 800, 
-                color: index === 2 ? '#C4161C' : '#1A1A1A', 
+                color: index === 2 ? '#ED1C24' : '#1A1A1A', 
                 marginBottom: '1rem' 
               }}>
                 {feature.title}
@@ -239,7 +239,7 @@ const Process = () => {
               <div style={{
                 width: '80px',
                 height: '3px',
-                background: index === 1 ? '#1A1A1A' : '#C4161C',
+                background: index === 1 ? '#1A1A1A' : '#ED1C24',
                 marginTop: '1.5rem'
               }} />
             </motion.div>
@@ -265,8 +265,8 @@ const Process = () => {
         }
         .process-icon-box:hover {
           transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba(196, 22, 28, 0.15) !important;
-          border-color: rgba(196, 22, 28, 0.2) !important;
+          box-shadow: 0 15px 30px rgba(237, 28, 36, 0.15) !important;
+          border-color: rgba(237, 28, 36, 0.2) !important;
         }
       `}</style>
     </section>
@@ -274,3 +274,4 @@ const Process = () => {
 };
 
 export default Process;
+

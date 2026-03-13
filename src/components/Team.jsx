@@ -13,7 +13,7 @@ const Team = () => {
            style={{ textAlign: 'center', marginBottom: '4rem' }}
         >
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', marginBottom: '1rem' }}>
-            Meet The <span style={{ color: '#C4161C' }}>Masters</span>
+            Meet The <span style={{ color: '#ED1C24' }}>Masters</span>
           </h2>
           <p style={{ color: '#666666', fontSize: '1.2rem' }}>We are a team of visionaries.</p>
         </motion.div>
@@ -58,7 +58,7 @@ const Team = () => {
               
               <div style={{ position: 'relative', zIndex: 2 }}>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: '#FFFFFF' }}>To Be Added</h3>
-                <p style={{ color: '#C4161C', fontSize: '0.9rem', fontWeight: 500 }}>Specialist</p>
+                <p style={{ color: '#ED1C24', fontSize: '0.9rem', fontWeight: 500 }}>Specialist</p>
               </div>
             </motion.div>
           ))}
@@ -69,4 +69,5 @@ const Team = () => {
 };
 
 export default Team;
+
 

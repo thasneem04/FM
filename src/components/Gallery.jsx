@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Gallery = () => {
-  const red = "#d10000";
+  const red = "#ED1C24";
 
   const projects = [
     { id: 1, category: 'Digital Marketing', title: 'Brand Campaign' },
@@ -83,7 +83,7 @@ const Gallery = () => {
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'rgba(209, 0, 0, 0.9)',
+                    background: 'rgba(237, 28, 36, 0.9)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -126,4 +126,5 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
 

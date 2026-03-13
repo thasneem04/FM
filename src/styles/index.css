@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap');
 
 :root {
-  --color-primary: #C4161C;
+  --color-primary: #ED1C24;
   --color-secondary: #FFFFFF;
   --color-bg-light: #FFFFFF;
   --color-bg-card: #F8F8F8;
@@ -148,7 +148,7 @@ button {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(196, 22, 28, 0.1);
+  border: 1px solid rgba(237, 28, 36, 0.1);
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
   border-radius: 16px;
 }
@@ -193,11 +193,11 @@ button {
 
 .hero-orb {
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #fdfdfd 20%, #ffe0e0 80%, #C4161C 140%);
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #fdfdfd 20%, #ffe0e0 80%, #ED1C24 140%);
   box-shadow: 
     -20px -20px 60px rgba(255,255,255,0.8),
-    20px 20px 60px rgba(196, 22, 28, 0.15),
-    inset -10px -10px 40px rgba(196, 22, 28, 0.1);
+    20px 20px 60px rgba(237, 28, 36, 0.15),
+    inset -10px -10px 40px rgba(237, 28, 36, 0.1);
   position: relative;
   z-index: 2;
 }
@@ -208,12 +208,12 @@ button {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(196, 22, 28, 0.1);
+  border: 1px solid rgba(237, 28, 36, 0.1);
   padding: 1rem 1.5rem;
   border-radius: 16px;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 15px 35px rgba(196, 22, 28, 0.08);
+  box-shadow: 0 15px 35px rgba(237, 28, 36, 0.08);
 }
 
 .hero-card--top {
@@ -227,7 +227,7 @@ button {
 }
 
 .hero-card__icon {
-  background: rgba(196, 22, 28, 0.08);
+  background: rgba(237, 28, 36, 0.08);
   color: var(--color-primary);
   width: 44px;
   height: 44px;
@@ -295,7 +295,7 @@ button {
   border-radius: 30px;
   padding: clamp(1.5rem, 6vw, 4rem);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(196, 22, 28, 0.08);
+  border: 1px solid rgba(237, 28, 36, 0.08);
   width: 100%;
 }
 
@@ -358,8 +358,8 @@ button {
 .form-field textarea:focus {
   outline: none;
   background: #FFFFFF;
-  border-color: rgba(196, 22, 28, 0.5);
-  box-shadow: 0 0 0 5px rgba(196, 22, 28, 0.08);
+  border-color: rgba(237, 28, 36, 0.5);
+  box-shadow: 0 0 0 5px rgba(237, 28, 36, 0.08);
 }
 
 .form-field--full {
@@ -376,7 +376,7 @@ button {
   font-weight: 700;
   align-self: flex-start;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(196, 22, 28, 0.25);
+  box-shadow: 0 10px 25px rgba(237, 28, 36, 0.25);
   width: 100%;
   margin-top: 1rem;
 }
@@ -389,7 +389,7 @@ button {
 
 .enquiry-submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(196, 22, 28, 0.35);
+  box-shadow: 0 15px 35px rgba(237, 28, 36, 0.35);
 }
 
 /* Grid helper */
@@ -410,3 +410,4 @@ button {
     z-index: 9999;
   }
 }
+

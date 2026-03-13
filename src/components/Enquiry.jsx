@@ -48,7 +48,7 @@ const Enquiry = () => {
             transition={{ duration: 0.6 }}
             className="enquiry-title"
           >
-            Partner With <span style={{ color: '#C4161C' }}>Fiction Master</span>
+            Partner With <span style={{ color: '#ED1C24', fontFamily: '"League Spartan", sans-serif' }}>FICTION MASTER</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -125,3 +125,4 @@ const Enquiry = () => {
 };
 
 export default Enquiry;
+

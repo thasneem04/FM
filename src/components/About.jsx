@@ -25,7 +25,7 @@ const About = () => {
               borderRadius: '32px',
               padding: '2rem',
               boxShadow: '0 30px 60px rgba(0,0,0,0.06)',
-              border: '1px solid rgba(196, 22, 28, 0.08)',
+              border: '1px solid rgba(237, 28, 36, 0.08)',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -61,7 +61,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <span style={{ 
-              color: '#C4161C', 
+              color: '#ED1C24', 
               fontWeight: 700, 
               textTransform: 'uppercase', 
               letterSpacing: '2px',
@@ -78,16 +78,16 @@ const About = () => {
               lineHeight: 1.1,
               marginBottom: '1.5rem'
             }}>
-              Leading AI-Powered Business <span style={{ color: '#C4161C' }}>Systems Company</span>
+              Leading AI-Powered Business <span style={{ color: '#ED1C24' }}>Systems Company</span>
             </h2>
             <p style={{ color: '#666666', fontSize: '1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Fiction Master is a technology-driven company specializing in intelligent business systems, custom ERP development, and AI-powered automation infrastructure for startups and SMEs.
+              <span style={{ fontFamily: '"League Spartan", sans-serif', fontWeight: 700, fontSize: '1.1rem' }}>FICTION MASTER</span> is a technology-driven company specializing in intelligent business systems, custom ERP development, and AI-powered automation infrastructure for startups and SMEs.
             </p>
             <p style={{ color: '#666666', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
               We help businesses operate smarter and scale efficiently through structured systems — not fragmented services. Our mission is to transition organizations to automated, scalable digital ecosystems.
             </p>
 
-            <div style={{ marginBottom: '2.5rem', paddingLeft: '1.5rem', borderLeft: '4px solid #C4161C' }}>
+            <div style={{ marginBottom: '2.5rem', paddingLeft: '1.5rem', borderLeft: '4px solid #ED1C24' }}>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '0.5rem' }}>Our Vision</h3>
               <p style={{ color: '#666666', fontSize: '0.95rem' }}>
                 To empower growing enterprises with intelligent digital infrastructure, automation, and scalable technology solutions.
@@ -98,19 +98,19 @@ const About = () => {
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', 
               gap: '1.5rem',
-              background: 'rgba(196, 22, 28, 0.02)',
+              background: 'rgba(237, 28, 36, 0.02)',
               padding: '1.5rem',
               borderRadius: '20px',
-              border: '1px solid rgba(196, 22, 28, 0.08)'
+              border: '1px solid rgba(237, 28, 36, 0.08)'
             }}>
               <div>
-                <h4 style={{ color: '#C4161C', marginBottom: '0.5rem', fontWeight: 700, fontSize: '0.9rem' }}>CORE EXPERTISE</h4>
+                <h4 style={{ color: '#ED1C24', marginBottom: '0.5rem', fontWeight: 700, fontSize: '0.9rem' }}>CORE EXPERTISE</h4>
                 <div style={{ color: '#666666', fontSize: '0.85rem' }}>
                   Architecture, Automation, AI Integration
                 </div>
               </div>
               <div>
-                <h4 style={{ color: '#C4161C', marginBottom: '0.5rem', fontWeight: 700, fontSize: '0.9rem' }}>ENGINEERING</h4>
+                <h4 style={{ color: '#ED1C24', marginBottom: '0.5rem', fontWeight: 700, fontSize: '0.9rem' }}>ENGINEERING</h4>
                 <div style={{ color: '#666666', fontSize: '0.85rem' }}>
                   Scalable Apps, Cloud, ERP
                 </div>
@@ -124,4 +124,5 @@ const About = () => {
 };
 
 export default About;
+
 

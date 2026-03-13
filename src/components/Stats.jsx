@@ -14,7 +14,7 @@ const Stats = () => {
     <section id="process" className="section-padding" style={{ background: '#FFFFFF', position: 'relative' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
         <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', marginBottom: '3rem' }}>
-          Our <span style={{ color: '#C4161C' }}>Process</span>
+          Our <span style={{ color: '#ED1C24' }}>Process</span>
         </h2>
         
         <div style={{ 
@@ -43,7 +43,7 @@ const Stats = () => {
               <div style={{
                 width: '60px',
                 height: '60px',
-                background: '#C4161C',
+                background: '#ED1C24',
                 color: '#FFFFFF',
                 borderRadius: '50%',
                 display: 'flex',
@@ -52,7 +52,7 @@ const Stats = () => {
                 fontSize: '1.5rem',
                 fontWeight: 800,
                 marginBottom: '1rem',
-                boxShadow: '0 10px 20px rgba(196, 22, 28, 0.2)'
+                boxShadow: '0 10px 20px rgba(237, 28, 36, 0.2)'
               }}>
                 {step.num}
               </div>
@@ -69,7 +69,7 @@ const Stats = () => {
             left: '10%',
             right: '10%',
             height: '2px',
-            background: 'rgba(196, 22, 28, 0.1)',
+            background: 'rgba(237, 28, 36, 0.1)',
             zIndex: 1,
             display: window.innerWidth > 768 ? 'block' : 'none'
           }} />
@@ -77,7 +77,7 @@ const Stats = () => {
 
         <div style={{ marginTop: '5rem' }}>
            <p style={{ fontSize: '1.25rem', color: '#666666' }}>
-             We build <span style={{ color: '#C4161C', fontWeight: 700 }}>scalable</span> systems designed for long-term <span style={{ color: '#C4161C', fontWeight: 700 }}>Sustainability</span>.
+             We build <span style={{ color: '#ED1C24', fontWeight: 700 }}>scalable</span> systems designed for long-term <span style={{ color: '#ED1C24', fontWeight: 700 }}>Sustainability</span>.
            </p>
         </div>
       </div>
@@ -86,3 +86,4 @@ const Stats = () => {
 };
 
 export default Stats;
+

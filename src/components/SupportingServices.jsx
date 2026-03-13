@@ -50,7 +50,7 @@ const SupportingServices = () => {
           style={{ marginBottom: '4rem' }}
         >
           <span style={{ 
-            color: '#C4161C', 
+            color: '#ED1C24', 
             fontWeight: 600, 
             textTransform: 'uppercase', 
             letterSpacing: '2px',
@@ -61,7 +61,7 @@ const SupportingServices = () => {
             Supporting Services
           </span>
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', marginBottom: '1.5rem', fontWeight: 800 }}>
-            Digital Strategy & <span style={{ color: '#C4161C' }}>Creative Support</span>
+            Digital Strategy & <span style={{ color: '#ED1C24' }}>Creative Support</span>
           </h2>
           <p style={{ color: '#666666', fontSize: '1.1rem', maxWidth: '850px', margin: '0 auto', lineHeight: 1.6 }}>
             Our digital and creative services empower businesses to build a strong and impactful brand presence. We enhance visibility across digital platforms and strategically position your business to stay competitive.
@@ -83,13 +83,13 @@ const SupportingServices = () => {
               style={{
                 textAlign: 'left',
                 padding: '2rem',
-                border: '1px solid rgba(196, 22, 28, 0.05)',
+                border: '1px solid rgba(237, 28, 36, 0.05)',
                 borderRadius: '16px',
                 transition: 'all 0.3s ease'
               }}
-              whileHover={{ borderColor: 'rgba(196, 22, 28, 0.2)', translateY: -5 }}
+              whileHover={{ borderColor: 'rgba(237, 28, 36, 0.2)', translateY: -5 }}
             >
-              <div style={{ color: '#C4161C', marginBottom: '1.2rem' }}>
+              <div style={{ color: '#ED1C24', marginBottom: '1.2rem' }}>
                 {service.icon}
               </div>
               <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#1A1A1A' }}>
@@ -111,4 +111,5 @@ const SupportingServices = () => {
 };
 
 export default SupportingServices; 
+
 

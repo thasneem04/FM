@@ -25,15 +25,15 @@ const ScrollToTop = () => {
         width: '52px',
         height: '52px',
         borderRadius: '999px',
-        border: '1px solid rgba(196, 22, 28, 0.25)',
-        background: '#C4161C',
+        border: '1px solid rgba(237, 28, 36, 0.25)',
+        background: '#ED1C24',
         color: '#FFFFFF',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         cursor: 'pointer',
         zIndex: 1100,
-        boxShadow: '0 12px 28px rgba(196, 22, 28, 0.35)',
+        boxShadow: '0 12px 28px rgba(237, 28, 36, 0.35)',
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(10px)',
         pointerEvents: isVisible ? 'auto' : 'none',
@@ -42,11 +42,11 @@ const ScrollToTop = () => {
       }}
       onMouseOver={(e) => {
         e.currentTarget.style.scale = '1.05';
-        e.currentTarget.style.boxShadow = '0 16px 34px rgba(196, 22, 28, 0.45)';
+        e.currentTarget.style.boxShadow = '0 16px 34px rgba(237, 28, 36, 0.45)';
       }}
       onMouseOut={(e) => {
         e.currentTarget.style.scale = '1';
-        e.currentTarget.style.boxShadow = '0 12px 28px rgba(196, 22, 28, 0.35)';
+        e.currentTarget.style.boxShadow = '0 12px 28px rgba(237, 28, 36, 0.35)';
       }}
     >
       <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>↑</span>
@@ -55,3 +55,4 @@ const ScrollToTop = () => {
 };
 
 export default ScrollToTop;
+

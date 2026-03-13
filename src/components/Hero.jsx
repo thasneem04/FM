@@ -31,7 +31,7 @@ const Hero = () => {
           right: '10%',
           width: 'min(300px, 40vw)',
           height: 'min(300px, 40vw)',
-          background: 'linear-gradient(45deg, #C4161C33, transparent)',
+          background: 'linear-gradient(45deg, #ED1C2433, transparent)',
           borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%',
           filter: 'blur(60px)',
           zIndex: 1
@@ -48,11 +48,11 @@ const Hero = () => {
             style={{
               display: 'inline-block',
               padding: '0.4rem 1.2rem',
-              background: 'rgba(196, 22, 28, 0.1)',
-              border: '1px solid rgba(196, 22, 28, 0.3)',
+              background: 'rgba(237, 28, 36, 0.1)',
+              border: '1px solid rgba(237, 28, 36, 0.3)',
               borderRadius: '50px',
               marginBottom: '1.5rem',
-              color: '#C4161C',
+              color: '#ED1C24',
               fontWeight: 600,
               fontSize: '0.8rem',
               textTransform: 'uppercase',
@@ -76,7 +76,7 @@ const Hero = () => {
             }}
           >
             MASTERING THE <br />
-            <span style={{ color: '#C4161C' }}>FUTURE OF BUSINESS</span>
+            <span style={{ color: '#ED1C24' }}>FUTURE OF BUSINESS</span>
           </motion.h1>
 
           <motion.p
@@ -104,7 +104,7 @@ const Hero = () => {
             <a 
               href="#enquiry"
               style={{
-                background: '#C4161C',
+                background: '#ED1C24',
                 color: '#FFFFFF',
                 padding: '1rem 2.5rem',
                 borderRadius: '50px',
@@ -114,7 +114,7 @@ const Hero = () => {
                 width: 'fit-content',
                 alignItems: 'center',
                 gap: '0.8rem',
-                boxShadow: '0 10px 20px rgba(196, 22, 28, 0.3)',
+                boxShadow: '0 10px 20px rgba(237, 28, 36, 0.3)',
                 transition: 'all 0.3s ease'
               }}
             >

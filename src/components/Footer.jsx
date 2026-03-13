@@ -62,16 +62,17 @@ const Footer = () => {
           fontSize: '0.85rem',
           color: '#666666'
         }}>
-          &copy; {new Date().getFullYear()} Fiction Master. All rights reserved.
+          &copy; {new Date().getFullYear()} <span style={{ fontFamily: '"League Spartan", sans-serif' }}>FICTION MASTER</span>. All rights reserved.
         </div>
       </div>
 
       <style>{`
-        .social-link:hover { color: #C4161C !important; transform: translateY(-3px); transition: all 0.3s ease; }
+        .social-link:hover { color: #ED1C24 !important; transform: translateY(-3px); transition: all 0.3s ease; }
       `}</style>
     </footer>
   );
 };
 
 export default Footer;
+
 

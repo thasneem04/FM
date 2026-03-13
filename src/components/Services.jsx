@@ -42,7 +42,7 @@ const Services = () => {
           style={{ textAlign: 'center', marginBottom: '4rem' }}
         >
           <span style={{ 
-            color: '#C4161C', 
+            color: '#ED1C24', 
             fontWeight: 700, 
             textTransform: 'uppercase', 
             letterSpacing: '2px',
@@ -53,7 +53,7 @@ const Services = () => {
             Digital Infrastructure Solutions
           </span>
           <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#1A1A1A', marginBottom: '1.5rem', fontWeight: 900 }}>
-            Our Core <span style={{ color: '#C4161C' }}>Services</span>
+            Our Core <span style={{ color: '#ED1C24' }}>Services</span>
           </h2>
           <p style={{ color: '#666666', fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>
             We design and implement end-to-end digital infrastructure and intelligent automation systems.
@@ -77,16 +77,16 @@ const Services = () => {
                 padding: '2.5rem 2rem',
                 background: '#FFFFFF',
                 borderRadius: '24px',
-                border: '1px solid rgba(196, 22, 28, 0.08)',
+                border: '1px solid rgba(237, 28, 36, 0.08)',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.02)',
                 transition: 'all 0.3s ease',
               }}
             >
               <div style={{
-                background: 'rgba(196, 22, 28, 0.05)',
+                background: 'rgba(237, 28, 36, 0.05)',
                 padding: '1rem',
                 borderRadius: '16px',
-                color: '#C4161C',
+                color: '#ED1C24',
                 width: 'fit-content',
                 marginBottom: '1.5rem'
               }}>
@@ -105,4 +105,5 @@ const Services = () => {
 };
 
 export default Services;
+
 

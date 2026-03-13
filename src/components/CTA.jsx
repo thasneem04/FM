@@ -7,7 +7,7 @@ const CTA = () => {
     <section 
       id="cta"
       style={{
-        background: 'linear-gradient(135deg, #C4161C 0%, #8A0A0A 100%)',
+        background: 'linear-gradient(135deg, #ED1C24 0%, #8A0A0A 100%)',
         padding: '6rem 6%',
         textAlign: 'center',
         position: 'relative',
@@ -21,7 +21,7 @@ const CTA = () => {
           transition={{ duration: 0.8 }}
           style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#FFFFFF', marginBottom: '1.5rem', fontWeight: 900 }}
         >
-          Partner With <span style={{ textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)', textDecorationThickness: '4px' }}>Fiction Master</span>
+          Partner With <span style={{ textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)', textDecorationThickness: '4px' }}>FICTION MASTER</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ const CTA = () => {
           transition={{ duration: 0.3 }}
           style={{
             background: '#FFFFFF',
-            color: '#C4161C',
+            color: '#ED1C24',
             padding: '1.2rem 3rem',
             borderRadius: '50px',
             fontSize: '1.1rem',
@@ -79,3 +79,4 @@ const CTA = () => {
 };
 
 export default CTA;
+

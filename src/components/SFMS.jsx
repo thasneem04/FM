@@ -36,7 +36,7 @@ const SFMS = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <span style={{ 
-              color: '#C4161C', 
+              color: '#ED1C24', 
               fontWeight: 600, 
               textTransform: 'uppercase', 
               letterSpacing: '2px',
@@ -47,7 +47,7 @@ const SFMS = () => {
               Core Product Solution
             </span>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.1 }}>
-              SMART FACILITY MANAGEMENT <span style={{ color: '#C4161C' }}>SYSTEM ( SFMS )</span>
+              SMART FACILITY MANAGEMENT <span style={{ color: '#ED1C24' }}>SYSTEM ( SFMS )</span>
             </h2>
             <p style={{ color: '#666666', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
               A specialized digital platform designed for Facility Management companies to streamline operations, manage contracts, and optimize technician workflows.
@@ -58,18 +58,18 @@ const SFMS = () => {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 {features.map((f, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: '#666666', fontSize: '0.95rem' }}>
-                    <CheckCircle2 size={18} style={{ color: '#C4161C' }} />
+                    <CheckCircle2 size={18} style={{ color: '#ED1C24' }} />
                     <span>{f}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div style={{ padding: '2rem', background: 'rgba(196, 22, 28, 0.03)', borderRadius: '16px', border: '1px solid rgba(196, 22, 28, 0.1)' }}>
+            <div style={{ padding: '2rem', background: 'rgba(237, 28, 36, 0.03)', borderRadius: '16px', border: '1px solid rgba(237, 28, 36, 0.1)' }}>
               <h4 style={{ color: '#1A1A1A', marginBottom: '1.2rem', fontWeight: 700, fontSize: '1.1rem' }}>DESIGNED FOR :</h4>
               <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                 {targetGroups.map((g, i) => (
-                  <li key={i} style={{ background: '#FFFFFF', padding: '0.5rem 1rem', borderRadius: '50px', fontSize: '0.9rem', color: '#C4161C', fontWeight: 600, border: '1px solid rgba(196, 22, 28, 0.1)' }}>
+                  <li key={i} style={{ background: '#FFFFFF', padding: '0.5rem 1rem', borderRadius: '50px', fontSize: '0.9rem', color: '#ED1C24', fontWeight: 600, border: '1px solid rgba(237, 28, 36, 0.1)' }}>
                     {g}
                   </li>
                 ))}
@@ -90,7 +90,7 @@ const SFMS = () => {
               borderRadius: '24px',
               padding: '1.2rem',
               boxShadow: '0 30px 60px rgba(0,0,0,0.12)',
-              border: '1px solid rgba(196, 22, 28, 0.08)',
+              border: '1px solid rgba(237, 28, 36, 0.08)',
               position: 'relative',
               zIndex: 2,
               overflow: 'hidden'
@@ -125,4 +125,5 @@ const SFMS = () => {
 };
 
 export default SFMS;
+
 
