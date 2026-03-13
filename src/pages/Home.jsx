@@ -6,6 +6,7 @@ import SFMS from '../components/SFMS';
 import OdooERP from '../components/OdooERP';
 import WhyChooseUs from '../components/WhyChooseUs';
 import SupportingServices from '../components/SupportingServices';
+import Process from '../components/Process';
 import CTA from '../components/CTA';
 import Enquiry from '../components/Enquiry';
 import Footer from '../components/Footer';
@@ -18,8 +19,7 @@ const Home = () => {
       <Services />
       <SFMS />
       <OdooERP />
-      {/* <Gallery /> */}
-      {/* <Team /> */}
+      <Process />
       <WhyChooseUs />
       <SupportingServices />
       <CTA />
