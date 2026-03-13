@@ -18,7 +18,8 @@ const Enquiry = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/enquiry', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/enquiry`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -39,7 +40,7 @@ const Enquiry = () => {
 
   return (
     <section id="enquiry" className="enquiry-section">
-      <div className="enquiry-inner">
+      <div className="container enquiry-inner">
         <div className="enquiry-hero">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +48,7 @@ const Enquiry = () => {
             transition={{ duration: 0.6 }}
             className="enquiry-title"
           >
-            Let&apos;s Build Your Success Together
+            Partner With <span style={{ color: '#C4161C' }}>Fiction Master</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -55,7 +56,7 @@ const Enquiry = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="enquiry-subtext"
           >
-            Tell us about your goals and we&apos;ll help you transform your idea into reality.
+            Let's transform your vision into scalable digital success. Together, we build intelligent systems that power the future of business.
           </motion.p>
         </div>
 
@@ -96,7 +97,7 @@ const Enquiry = () => {
 
             <label className="form-field form-field--full">
               <span>Short Message / Project Description</span>
-              <textarea name="message" rows="5" placeholder="Tell us about your project vision..." />
+              <textarea name="message" rows="5" placeholder="Tell us about your project vision..." style={{ resize: 'none' }} />
             </label>
 
             <button className="enquiry-submit" type="submit" disabled={status.loading}>
@@ -108,7 +109,10 @@ const Enquiry = () => {
                 marginTop: '1rem', 
                 textAlign: 'center', 
                 color: status.success ? '#22c55e' : '#ef4444',
-                fontWeight: 600 
+                fontWeight: 600,
+                padding: '0.8rem',
+                borderRadius: '12px',
+                background: status.success ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)'
               }}>
                 {status.message}
               </p>

@@ -28,10 +28,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 h1 {
@@ -51,25 +50,9 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border-color: #C4161C;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
 /* ===============================
    PREMIUM RED × WHITE CURSOR
 ================================ */
@@ -126,76 +109,11 @@ button:focus-visible {
     cursor: none;
   }
 }
-
-/* Mobile & touch devices */
-@media (pointer: coarse) {
-  body {
-    cursor: default;
-  }
-}
-/* ===============================
-   PREMIUM RED × WHITE CURSOR
-================================ */
-
-/* Hide default cursor only if not touch device */
-@media (min-width: 768px) {
-  body, a, button {
-    cursor: none !important;
-  }
+/* Global transition smoothness */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  background-color: white;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 20000;
-  margin-left: -4px; /* Center offset */
-  margin-top: -4px;
-  mix-blend-mode: difference;
-}
-
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border: 1.5px solid rgba(196, 22, 28, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 19999;
-  margin-left: -20px; /* Center offset */
-  margin-top: -20px;
-  transition: opacity 0.3s ease;
-}
-
-/* Hide on mobile */
-@media (max-width: 767px) {
-  .cursor-dot, .cursor-ring {
-    display: none;
-  }
-  body, a, button {
-    cursor: auto !important;
-  }
-}
-/* Hide system cursor only on desktop */
-@media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
-
-/* Mobile & touch devices */
-@media (pointer: coarse) {
-  body {
-    cursor: default;
-  }
-}
 html, body {
   width: 100%;
   overflow-x: hidden;

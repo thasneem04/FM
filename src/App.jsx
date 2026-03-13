@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import IntroOverlay from './components/IntroOverlay';
 import Navbar from './components/Navbar';
@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import Collaborate from './pages/Collaborate';
 import ScrollToTop from './components/ScrollToTop';
 import PremiumCursor from "./PremiumCursor";
-
 
 function App() {
   const [introDone, setIntroDone] = useState(false);
@@ -29,22 +28,27 @@ function App() {
   return (
     <Router>
       <PremiumCursor />
-      <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh', color: '#1A1A1A' }}>
+      <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh', color: '#1A1A1A', width: '100vw', overflowX: 'hidden' }}>
         
-        {!introDone && (
-          <IntroOverlay
-            onComplete={() => {
-              setIntroDone(true);
-            }}
-          />
-        )}
+        <AnimatePresence mode="wait">
+          {!introDone && (
+            <IntroOverlay
+              key="intro"
+              onComplete={() => {
+                setIntroDone(true);
+              }}
+            />
+          )}
+        </AnimatePresence>
 
         {introDone && (
           <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
+            key="main"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
             className="page-offset"
+            style={{ width: '100%', maxWidth: '100vw' }}
           >
             <Navbar />
             <Routes>
@@ -58,6 +62,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;

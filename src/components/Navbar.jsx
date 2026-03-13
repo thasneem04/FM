@@ -11,7 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  const red = "#d10000"; // Requested red
+  const red = "#d10000";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,16 +23,14 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About', href: isHome ? '#about' : '/#about' },
-    { name: 'Team', href: isHome ? '#team' : '/#team' },
-    { name: 'Stats', href: isHome ? '#stats' : '/#stats' },
-    { name: 'Reviews', href: isHome ? '#reviews' : '/#reviews' },
+    { name: 'SFMS', href: isHome ? '#sfms' : '/#sfms' },
+    { name: 'Odoo ERP', href: isHome ? '#odoo-erp' : '/#odoo-erp' },
   ];
 
   const serviceItems = [
     { name: 'Digital Marketing', href: isHome ? '#services' : '/#services' },
     { name: 'Web Development', href: isHome ? '#services' : '/#services' },
     { name: 'Branding', href: isHome ? '#services' : '/#services' },
-    { name: 'Gallery', href: isHome ? '#gallery' : '/#gallery' },
     { name: 'Collaborate With Us', href: '/collaborate', highlight: true },
   ];
 
@@ -63,22 +61,12 @@ const Navbar = () => {
         boxShadow: scrolled ? '0 10px 40px rgba(0, 0, 0, 0.05)' : 'none'
       }}
     >
-      {/* Brand */}
       <Link to="/" onClick={handleLinkClick} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-        <Logo size={40} />
-        <span style={{ 
-          fontSize: '1.25rem', 
-          fontWeight: 700, 
-          letterSpacing: '0.05em',
-          textTransform: 'uppercase' 
-        }}>
-          <span style={{ color: red }}>Fiction</span>{' '}
-          <span style={{ color: '#666666' }}>Master</span>
-        </span>
+        <Logo size={scrolled ? 40 : 50} />
       </Link>
 
       {/* Desktop Links */}
-      <div className="hidden md:flex" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+      <div className="nav-desktop" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
         {navLinks.map((link) => (
           <a 
             key={link.name} 
@@ -204,134 +192,152 @@ const Navbar = () => {
       {/* Mobile Menu Toggle */}
       <button 
         onClick={() => setIsOpen(!isOpen)} 
-        style={{ background: 'transparent', border: 'none', color: '#1A1A1A', display: 'block' }}
-        className="md:hidden"
+        style={{ background: 'transparent', border: 'none', color: '#1A1A1A' }}
+        className="nav-mobile-toggle"
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay and Drawer */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            style={{
-              position: 'fixed',
-              top: 0,
-              right: 0,
-              width: '100%',
-              height: '100vh',
-              background: '#FFFFFF',
-              padding: '0',
-              display: 'flex',
-              flexDirection: 'column',
-              zIndex: 2100,
-              overflowY: 'auto'
-            }}
-          >
-            {/* Mobile Menu Header */}
-            <div style={{ 
-              padding: '1.2rem 5%', 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              alignItems: 'center',
-              borderBottom: '1px solid #F0F0F0'
-            }}>
-              <Link to="/" onClick={handleLinkClick} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                <Logo size={40} />
-                <span style={{ 
-                  fontSize: '1.25rem', 
-                  fontWeight: 700, 
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase' 
-                }}>
-                  <span style={{ color: red }}>Fiction</span>{' '}
-                  <span style={{ color: '#666666' }}>Master</span>
-                </span>
-              </Link>
-              <button 
-                onClick={() => setIsOpen(false)}
-                style={{ background: 'transparent', border: 'none', color: '#1A1A1A', padding: '0.5rem' }}
-              >
-                <X size={32} color={red} />
-              </button>
-            </div>
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsOpen(false)}
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100vh',
+                background: 'rgba(0, 0, 0, 0.4)',
+                backdropFilter: 'blur(4px)',
+                WebkitBackdropFilter: 'blur(4px)',
+                zIndex: 2050
+              }}
+            />
 
-            <div style={{ padding: '2rem 10%', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                onClick={handleLinkClick}
-                style={{ fontSize: '1.8rem', color: '#1A1A1A', fontWeight: 800, textDecoration: 'none' }}
-              >
-                {link.name}
-              </a>
-            ))}
-
-            <div style={{ borderTop: '1px solid #EEE', paddingTop: '1.5rem', marginTop: '1rem' }}>
-              <div style={{ fontSize: '0.9rem', color: '#999', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 700, marginBottom: '1.5rem' }}>
-                Services
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                {serviceItems.map((item) => (
-                  item.highlight ? (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={handleLinkClick}
-                      style={{ fontSize: '1.4rem', color: red, fontWeight: 800, textDecoration: 'none' }}
-                    >
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      onClick={handleLinkClick}
-                      style={{ fontSize: '1.4rem', color: '#1A1A1A', fontWeight: 700, textDecoration: 'none' }}
-                    >
-                      {item.name}
-                    </a>
-                  )
-                ))}
-              </div>
-            </div>
-
-            <a 
-              href={isHome ? "#cta" : "/#cta"}
-              onClick={handleLinkClick}
-              style={{ 
-                background: red,
-                color: '#FFF', 
-                fontSize: '1.5rem', 
-                fontWeight: 800,
-                padding: '1.2rem',
-                borderRadius: '16px',
-                textAlign: 'center',
-                textDecoration: 'none',
-                marginTop: 'auto'
+            {/* Side Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
+              style={{
+                position: 'fixed',
+                top: 0,
+                right: 0,
+                width: '80%',
+                maxWidth: '380px',
+                height: '100vh',
+                background: '#FFFFFF',
+                padding: '0',
+                display: 'flex',
+                flexDirection: 'column',
+                zIndex: 2100,
+                overflowY: 'auto',
+                boxShadow: '-10px 0 40px rgba(0,0,0,0.1)'
               }}
             >
-              Start Project →
-            </a>
-          </div>
-        </motion.div>
+              <div style={{ 
+                padding: '1.5rem 2rem', 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center',
+                borderBottom: '1px solid #F0F0F0',
+                position: 'sticky',
+                top: 0,
+                background: '#FFFFFF',
+                zIndex: 10
+              }}>
+                <Link to="/" onClick={handleLinkClick} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                  <Logo size={32} />
+                </Link>
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  style={{ background: 'rgba(196,22,28,0.08)', borderRadius: '50%', border: 'none', color: '#1A1A1A', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <X size={24} color={red} />
+                </button>
+              </div>
+
+              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {navLinks.map((link) => (
+                  <a 
+                    key={link.name} 
+                    href={link.href} 
+                    onClick={handleLinkClick}
+                    style={{ fontSize: '1.3rem', color: '#1A1A1A', fontWeight: 800, textDecoration: 'none' }}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+
+                <div style={{ borderTop: '1px solid #EEE', paddingTop: '1.5rem', marginTop: '1rem' }}>
+                  <div style={{ fontSize: '0.8rem', color: '#999', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 700, marginBottom: '1.5rem' }}>
+                    Services
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+                    {serviceItems.map((item) => (
+                      item.highlight ? (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          onClick={handleLinkClick}
+                          style={{ fontSize: '1.1rem', color: red, fontWeight: 800, textDecoration: 'none' }}
+                        >
+                          {item.name}
+                        </Link>
+                      ) : (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          onClick={handleLinkClick}
+                          style={{ fontSize: '1.1rem', color: '#1A1A1A', fontWeight: 600, textDecoration: 'none' }}
+                        >
+                          {item.name}
+                        </a>
+                      )
+                    ))}
+                  </div>
+                </div>
+
+                <a 
+                  href={isHome ? "#cta" : "/#cta"}
+                  onClick={handleLinkClick}
+                  style={{ 
+                    background: red,
+                    color: '#FFF', 
+                    fontSize: '1.1rem', 
+                    fontWeight: 800,
+                    padding: '1rem',
+                    borderRadius: '16px',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    marginTop: '1.5rem',
+                    boxShadow: '0 10px 20px rgba(196,22,28,0.2)'
+                  }}
+                >
+                  Start Project →
+                </a>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 
       <style>{`
-        @media (min-width: 768px) {
-          .md\\:hidden { display: none !important; }
+        @media (min-width: 992px) {
+          .nav-mobile-toggle { display: none !important; }
         }
-        @media (max-width: 767px) {
-          .hidden.md\\:flex { display: none !important; }
-        }
-        a, Link {
-           -webkit-tap-highlight-color: transparent;
+        @media (max-width: 991px) {
+          .nav-desktop { display: none !important; }
+          nav { padding: 0.8rem 5% !important; }
         }
       `}</style>
     </nav>

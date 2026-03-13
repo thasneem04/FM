@@ -13,7 +13,8 @@ const Hero = () => {
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        background: '#FFFFFF'
+        background: '#FFFFFF',
+        paddingTop: '80px'
       }}
     >
       {/* 3D Background Elements floating */}
@@ -28,35 +29,17 @@ const Hero = () => {
           position: 'absolute',
           top: '20%',
           right: '10%',
-          width: '300px',
-          height: '300px',
+          width: 'min(300px, 40vw)',
+          height: 'min(300px, 40vw)',
           background: 'linear-gradient(45deg, #C4161C33, transparent)',
           borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%',
           filter: 'blur(60px)',
           zIndex: 1
         }}
       />
-      <motion.div
-        animate={{
-          y: [0, 30, 0],
-          rotate: [0, -10, 0]
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        style={{
-          position: 'absolute',
-          bottom: '10%',
-          left: '5%',
-          width: '400px',
-          height: '400px',
-          background: 'linear-gradient(135deg, rgba(196, 22, 28, 0.1), transparent)',
-          borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
-          filter: 'blur(50px)',
-          zIndex: 1
-        }}
-      />
-
-      {/* Content */}
-      <div className="section-padding hero-layout">
+      
+      {/* Content Container */}
+      <div className="container hero-layout">
         <div className="hero-content">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -64,51 +47,51 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             style={{
               display: 'inline-block',
-              padding: '0.5rem 1.5rem',
+              padding: '0.4rem 1.2rem',
               background: 'rgba(196, 22, 28, 0.1)',
               border: '1px solid rgba(196, 22, 28, 0.3)',
               borderRadius: '50px',
-              marginBottom: '2rem',
+              marginBottom: '1.5rem',
               color: '#C4161C',
               fontWeight: 600,
-              letterSpacing: '0.1em',
-              fontSize: '0.9rem',
-              textTransform: 'uppercase'
+              fontSize: '0.8rem',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
             }}
           >
-            Agency of the Future
+            Your Technology Partner for Scalable Growth
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             style={{
-              fontSize: 'clamp(3rem, 6vw, 5rem)',
+              fontSize: 'clamp(2.5rem, 8vw, 5rem)',
               lineHeight: 1.1,
-              fontWeight: 800,
+              fontWeight: 900,
               marginBottom: '1.5rem',
               color: '#1A1A1A',
               letterSpacing: '-0.02em'
             }}
           >
-            DOMINATE THE <br />
-            <span style={{ color: '#C4161C' }}>DIGITAL REALM</span>
+            MASTERING THE <br />
+            <span style={{ color: '#C4161C' }}>FUTURE OF BUSINESS</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
             style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
+              fontSize: 'clamp(1rem, 2vw, 1.2rem)',
               color: '#666666',
               maxWidth: '600px',
-              margin: '0 0 3rem',
+              marginBottom: '2.5rem',
               lineHeight: 1.6
             }}
           >
-            We blend cinematic aesthetics with data-driven strategy to create brands that don&apos;t just exist—they lead.
+            AI Powered Business Systems & Digital Infrastructure Company. We design intelligent digital systems that automate operations, improve efficiency, and accelerate growth.
           </motion.p>
 
           <motion.div
@@ -116,24 +99,24 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="hero-actions"
+            style={{ position: 'relative', zIndex: 10 }}
           >
             <a 
-              href="#contact"
+              href="#enquiry"
               style={{
                 background: '#C4161C',
                 color: '#FFFFFF',
                 padding: '1rem 2.5rem',
                 borderRadius: '50px',
                 fontSize: '1rem',
-                fontWeight: 600,
-                display: 'flex',
+                fontWeight: 700,
+                display: 'inline-flex',
+                width: 'fit-content',
                 alignItems: 'center',
-                gap: '0.5rem',
-                boxShadow: '0 0 20px rgba(196, 22, 28, 0.4)',
-                transition: 'transform 0.3s'
+                gap: '0.8rem',
+                boxShadow: '0 10px 20px rgba(196, 22, 28, 0.3)',
+                transition: 'all 0.3s ease'
               }}
-              onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-3px)'}
-              onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
             >
               Start Your Project <ArrowRight size={20} />
             </a>
@@ -141,13 +124,14 @@ const Hero = () => {
         </div>
 
         <div className="hero-visual" aria-hidden="true">
-          <div className="hero-orb" />
+          <div className="hero-orb" style={{ width: 'min(340px, 80vw)', height: 'min(340px, 80vw)' }} />
 
           <motion.div
             className="hero-card hero-card--top"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: [0, -12, 0], x: [0, 6, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            style={{ display: window.innerWidth < 480 ? 'none' : 'flex' }}
           >
             <div className="hero-card__icon">
               <TrendingUp size={22} />
@@ -163,6 +147,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: [0, 14, 0], x: [0, -5, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+            style={{ display: window.innerWidth < 480 ? 'none' : 'flex' }}
           >
             <div className="hero-card__icon">
               <Target size={22} />
@@ -183,7 +168,8 @@ const Hero = () => {
         width: '100%',
         height: '150px',
         background: 'linear-gradient(to top, #FFFFFF, transparent)',
-        zIndex: 5
+        zIndex: 5,
+        pointerEvents: 'none'
       }} />
     </section>
   );

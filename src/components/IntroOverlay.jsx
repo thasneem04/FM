@@ -4,19 +4,19 @@ import Logo from './Logo';
 
 const IntroOverlay = ({ onComplete }) => {
   const [phase, setPhase] = useState('assemble'); // 'assemble' | 'sweep' | 'fade'
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    // TIMELINE:
-    // 0ms   - Start Assembly (Logo fades in, Text slides in)
-    // 1500ms - Assembly ends, Sweep starts
-    // 3000ms - Sweep ends, Fade out starts
-    // 4500ms - End
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
     
+    // TIMELINE:
     const timerSweep = setTimeout(() => setPhase('sweep'), 1500);
     const timerFade = setTimeout(() => setPhase('fade'), 3200);
     const timerDone = setTimeout(() => onComplete(), 4500);
 
     return () => {
+      window.removeEventListener('resize', handleResize);
       clearTimeout(timerSweep);
       clearTimeout(timerFade);
       clearTimeout(timerDone);
@@ -69,13 +69,14 @@ const IntroOverlay = ({ onComplete }) => {
   };
 
   const textLeftVariants = {
-    hidden: { opacity: 0, x: -30 },
+    hidden: { opacity: 0, x: isMobile ? 0 : -30, y: isMobile ? 20 : 0 },
     assemble: { 
       opacity: 1, 
       x: 0, 
+      y: 0,
       transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1], delay: 0.2 } 
     },
-    sweep: { opacity: 1, x: 0 },
+    sweep: { opacity: 1, x: 0, y: 0 },
     fade: { 
       opacity: 0, 
       transition: { duration: 0.8, delay: 0.2 } 
@@ -83,13 +84,14 @@ const IntroOverlay = ({ onComplete }) => {
   };
 
   const textRightVariants = {
-    hidden: { opacity: 0, x: 30 },
+    hidden: { opacity: 0, x: isMobile ? 0 : 30, y: isMobile ? 20 : 0 },
     assemble: { 
       opacity: 1, 
       x: 0, 
+      y: 0,
       transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1], delay: 0.2 } 
     },
-    sweep: { opacity: 1, x: 0 },
+    sweep: { opacity: 1, x: 0, y: 0 },
     fade: { 
       opacity: 0, 
       transition: { duration: 0.8, delay: 0.2 } 
@@ -97,15 +99,30 @@ const IntroOverlay = ({ onComplete }) => {
   };
 
   const sloganVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 10 },
     assemble: { 
       opacity: 1, 
+      y: 0,
       transition: { duration: 1.0, delay: 0.8 } 
     },
-    sweep: { opacity: 1 },
+    sweep: { opacity: 1, y: 0 },
     fade: { 
       opacity: 0, 
       transition: { duration: 0.8, delay: 0.1 } 
+    }
+  };
+
+  const backgroundVariants = {
+    hidden: { opacity: 0, scale: 1.1 },
+    assemble: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 2.5, ease: "easeOut" } 
+    },
+    sweep: { opacity: 1, scale: 1 },
+    fade: { 
+      opacity: 0, 
+      transition: { duration: 1.2 } 
     }
   };
 
@@ -115,10 +132,11 @@ const IntroOverlay = ({ onComplete }) => {
       variants={containerVariants}
       initial="assemble" 
       animate={phase}
+      exit={{ opacity: 0, scale: 1.05, transition: { duration: 0.8 } }}
       style={{
         position: 'fixed',
         inset: 0,
-        background: '#050505', 
+        background: '#FFFFFF', 
         zIndex: 9999,
         display: 'flex',
         alignItems: 'center',
@@ -126,11 +144,28 @@ const IntroOverlay = ({ onComplete }) => {
         overflow: 'hidden'
       }}
     >
+      {/* BACKGROUND IMAGE LAYER */}
+      <motion.div
+        variants={backgroundVariants}
+        initial="hidden"
+        animate={phase}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'url("/business_growth_intro.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: -1
+        }}
+      />
+
+      {/* GRADIENT OVERLAY FOR READABILITY */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(circle at center, rgba(249, 249, 249, 1) 0%, rgba(246, 245, 245, 1) 70%)',
+          background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.7) 100%)',
+          zIndex: 0,
           pointerEvents: 'none'
         }}
       />
@@ -142,18 +177,19 @@ const IntroOverlay = ({ onComplete }) => {
           flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center',
-          perspective: '1000px'
+          perspective: '1000px',
+          padding: '0 2rem'
         }}
       >
         {/* LOGO CONTAINER WITH SWEEP */}
-        <div style={{ position: 'relative', marginBottom: '2rem' }}>
+        <div style={{ position: 'relative', marginBottom: isMobile ? '1.5rem' : '2rem' }}>
           <motion.div
             variants={logoContainerVariants}
             initial="hidden"
             animate={phase}
             style={{ transformStyle: 'preserve-3d' }}
           >
-            <Logo size={100} />
+            <Logo size={isMobile ? 60 : 100} />
           </motion.div>
           
           {/* THE LIGHT SWEEP OVERLAY */}
@@ -194,19 +230,21 @@ const IntroOverlay = ({ onComplete }) => {
         {/* BRAND TEXT */}
         <div style={{ 
           display: 'flex', 
-          gap: '1rem', 
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: isMobile ? '0.3rem' : '0.5rem', 
           alignItems: 'center',
           fontFamily: "'Outfit', sans-serif",
           fontWeight: 700,
-          fontSize: 'clamp(2rem, 5vw, 4rem)',
+          fontSize: isMobile ? '1.5rem' : 'clamp(1.2rem, 3vw, 2.2rem)',
           letterSpacing: '0.1em',
-          color: '#fe0303ff'
+          color: '#fe0303ff',
+          marginBottom: isMobile ? '1rem' : '0'
         }}>
           <motion.span variants={textLeftVariants} initial="hidden" animate={phase}>
-            FICTION
+            Mastering the
           </motion.span>
           <motion.span variants={textRightVariants} initial="hidden" animate={phase} style={{ color: '#635b5bff' }}>
-            MASTER
+            Future of Business
           </motion.span>
         </div>
 
@@ -216,15 +254,17 @@ const IntroOverlay = ({ onComplete }) => {
           initial="hidden"
           animate={phase}
           style={{
-            marginTop: '1.2rem',
-            fontSize: 'clamp(0.7rem, 1.5vw, 0.9rem)',
-            color: '#888888',
-            letterSpacing: '0.4em',
+            marginTop: isMobile ? '0.5rem' : '1.2rem',
+            fontSize: isMobile ? '0.65rem' : 'clamp(0.7rem, 1.5vw, 0.9rem)',
+            color: '#444444',
+            letterSpacing: isMobile ? '0.2em' : '0.4em',
             fontWeight: 700,
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            maxWidth: isMobile ? '280px' : 'none',
+            lineHeight: 1.4
           }}
         >
-          Grow your Business with Words and Designs
+          AI Powered Business Systems & <span style={{ color: '#f50c0cff' }}>Digital Infrastructure</span> Company
         </motion.p>
       </div>
     </motion.div>

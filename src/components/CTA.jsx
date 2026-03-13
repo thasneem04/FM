@@ -21,7 +21,7 @@ const CTA = () => {
           transition={{ duration: 0.8 }}
           style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#FFFFFF', marginBottom: '1.5rem', fontWeight: 900 }}
         >
-          READY TO <span style={{ textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)', textDecorationThickness: '4px' }}>DOMINATE</span>?
+          Partner With <span style={{ textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)', textDecorationThickness: '4px' }}>Fiction Master</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ const CTA = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}
         >
-          Join the ranks of market leaders. Let's build your legacy together.
+          Let's transform your vision into scalable digital success. Together, we build intelligent systems that power the future of business.
         </motion.p>
         
         <motion.a

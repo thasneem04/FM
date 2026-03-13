@@ -4,7 +4,7 @@ const Logo = ({ className, size = 32 }) => {
   return (
     <div className={className} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img 
-        src="/logo.png" 
+        src="/FMLOGO.png" 
         alt="Fiction Master Logo" 
         style={{ 
           width: 'auto', 
