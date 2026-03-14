@@ -24,6 +24,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'About', href: isHome ? '#about' : '/#about' },
     { name: 'Services', href: isHome ? '#services' : '/#services' },
+    { name: 'Branding', href: isHome ? '#branding' : '/#branding' },
     { name: 'SFMS', href: isHome ? '#sfms' : '/#sfms' },
     { name: 'ERP', href: isHome ? '#erp' : '/#erp' },
     { name: 'AI Automation', href: isHome ? '#ai-automation' : '/#ai-automation' },
@@ -75,9 +76,19 @@ const Navbar = () => {
 
         <Link 
           to="/collaborate"
-          style={{ color: '#666666', fontSize: '0.9rem', fontWeight: 600, transition: 'color 0.3s', textDecoration: 'none' }}
-          onMouseOver={(e) => e.currentTarget.style.color = red}
-          onMouseOut={(e) => e.currentTarget.style.color = '#666666'}
+          style={{
+            background: red,
+            color: '#FFFFFF',
+            padding: '0.8rem 1.8rem',
+            borderRadius: '50px',
+            fontSize: '0.9rem',
+            fontWeight: 700,
+            textDecoration: 'none',
+            boxShadow: `0 10px 20px rgba(237, 28, 36, 0.2)`,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}
         >
           Collaborate With Us
         </Link>
@@ -196,7 +207,18 @@ const Navbar = () => {
                 <Link
                   to="/collaborate"
                   onClick={handleLinkClick}
-                  style={{ fontSize: '1.3rem', color: '#1A1A1A', fontWeight: 800, textDecoration: 'none' }}
+                  style={{ 
+                    background: red,
+                    color: '#FFF', 
+                    fontSize: '1.1rem', 
+                    fontWeight: 800,
+                    padding: '1rem',
+                    borderRadius: '16px',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    marginTop: '1.5rem',
+                    boxShadow: '0 10px 20px rgba(237,28,36,0.2)'
+                  }}
                 >
                   Collaborate With Us
                 </Link>

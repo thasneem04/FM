@@ -1,37 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Smartphone, ShoppingBag, Zap, Code, Megaphone } from 'lucide-react';
+import { Monitor, Smartphone, ShoppingBag, Zap, Code, Megaphone, ChevronsDown } from 'lucide-react';
 
 const services = [
   { 
     title: 'Business Website Systems', 
     icon: <Monitor />,
-    desc: 'We design and develop professional business websites that strengthen your digital presence and build customer trust.'
+    desc: 'We design and develop professional business websites that strengthen your digital presence and build customer trust.',
+    link: '#services'
   },
   { 
     title: 'ERP Systems', 
     icon: <ShoppingBag />,
-    desc: 'We implement smart ERP solutions that connect and streamline your business operations in one centralized system.'
+    desc: 'We implement smart ERP solutions that connect and streamline your business operations in one centralized system.',
+    link: '#erp'
   },
   { 
     title: 'Web & Mobile Apps', 
     icon: <Smartphone />,
-    desc: 'We develop custom web and mobile applications tailored to your business needs, enhancing user experience.'
+    desc: 'We develop custom web and mobile applications tailored to your business needs, enhancing user experience.',
+    link: '#web-mobile-apps'
   },
   { 
     title: 'AI Solutions', 
     icon: <Code />,
-    desc: 'Intelligent AI solutions that help businesses automate communication, generate content, and improve decision-making.'
+    desc: 'Intelligent AI solutions that help businesses automate communication, generate content, and improve decision-making.',
+    link: '#ai-solutions'
   },
   { 
     title: 'SFMS Solution', 
     icon: <Zap />,
-    desc: 'Advanced field service management solutions to organize and monitor service operations efficiently.'
+    desc: 'Advanced field service management solutions to organize and monitor service operations efficiently.',
+    link: '#sfms'
   },
   { 
     title: 'Digital Marketing', 
     icon: <Megaphone />,
-    desc: 'Result-driven digital marketing strategies that help businesses increase visibility, reach more customers, and grow their brand online.'
+    desc: 'Result-driven digital marketing strategies that help businesses increase visibility, reach more customers, and grow their brand online.',
+    link: '#digital-marketing'
   },
 ];
 
@@ -85,6 +91,9 @@ const Services = () => {
                 border: '1px solid rgba(237, 28, 36, 0.08)',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.02)',
                 transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
               }}
             >
               <div style={{
@@ -98,9 +107,36 @@ const Services = () => {
                 {React.cloneElement(service.icon, { size: 28 })}
               </div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#1A1A1A', marginBottom: '1rem' }}>{service.title}</h3>
-              <p style={{ color: '#666666', fontSize: '0.95rem', lineHeight: 1.6 }}>
+              <p style={{ color: '#666666', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '2rem' }}>
                 {service.desc}
               </p>
+              
+              <a 
+                href={service.link}
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  background: 'rgba(237, 28, 36, 0.05)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#ED1C24',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                  marginTop: 'auto'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = '#ED1C24';
+                  e.currentTarget.style.color = '#FFFFFF';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = 'rgba(237, 28, 36, 0.05)';
+                  e.currentTarget.style.color = '#ED1C24';
+                }}
+              >
+                <ChevronsDown size={20} />
+              </a>
             </motion.div>
           ))}
         </div>
