@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
@@ -16,6 +16,8 @@ import Enquiry from '../components/Enquiry';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  const [showEnquiry, setShowEnquiry] = useState(false);
+
   return (
     <>
       <Hero />
@@ -30,8 +32,8 @@ const Home = () => {
       <Process />
       <WhyChooseUs />
       <SupportingServices />
-      <CTA />
-      <Enquiry />
+      <CTA onStartClick={() => setShowEnquiry(true)} />
+      {showEnquiry && <Enquiry />}
       <Footer />
     </>
   );

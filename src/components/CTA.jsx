@@ -2,7 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const CTA = () => {
+const CTA = ({ onStartClick }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (onStartClick) {
+      onStartClick();
+    }
+    setTimeout(() => {
+      document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <section 
       id="cta"
@@ -34,6 +44,7 @@ const CTA = () => {
         
         <motion.a
           href="#enquiry"
+          onClick={handleClick}
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}
