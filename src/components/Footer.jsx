@@ -30,10 +30,14 @@ const Footer = () => {
         <div>
           <h4 style={{ color: '#FFFFFF', marginBottom: '1.5rem', fontWeight: 700, fontSize: '1.1rem' }}>Services</h4>
           <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.9rem', padding: 0, listStyle: 'none' }}>
-            <li>Business Website Systems</li>
-            <li>ERP Systems (Odoo)</li>
-            <li>Web & Mobile Development</li>
-            <li>AI Automation Infrastructure</li>
+            <li>Website & E-commerce</li>
+            <li>ERP Systems</li>
+
+            <li>Branding</li>
+            <li>Digital Marketing</li>
+            <li>Social Media Management</li>
+            <li>AI Solutions & Automation</li>
+            <li>SFMS</li>
           </ul>
         </div>
 

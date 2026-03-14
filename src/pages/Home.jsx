@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
+import BusinessWebsites from '../components/BusinessWebsites';
 import SFMS from '../components/SFMS';
 import OdooERP from '../components/OdooERP';
 import DigitalMarketing from '../components/DigitalMarketing';
@@ -10,7 +11,7 @@ import Branding from '../components/Branding';
 import AiSolutions from '../components/AiSolutions';
 import AiAutomation from '../components/AiAutomation';
 import ErpSolutions from '../components/ErpSolutions';
-import WebMobileApps from '../components/WebMobileApps';
+
 import WhyChooseUs from '../components/WhyChooseUs';
 import SupportingServices from '../components/SupportingServices';
 import Process from '../components/Process';
@@ -24,6 +25,7 @@ const Home = () => {
       <Hero />
       <About />
       <Services />
+      <BusinessWebsites />
       <DigitalMarketing />
       <SocialMediaManagement />
       <Branding />
@@ -32,7 +34,7 @@ const Home = () => {
       <SFMS />
       <ErpSolutions />
       <OdooERP />
-      <WebMobileApps />
+
       <Process />
       <WhyChooseUs />
       <SupportingServices />

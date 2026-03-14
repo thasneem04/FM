@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Smartphone, ShoppingBag, Zap, Code, Megaphone, ChevronsDown } from 'lucide-react';
+import { Monitor, Smartphone, ShoppingBag, Zap, Code, Megaphone, ChevronsDown, PenTool } from 'lucide-react';
 
 const services = [
   { 
     title: 'Business Website Systems', 
     icon: <Monitor />,
     desc: 'We design and develop professional business websites that strengthen your digital presence and build customer trust.',
-    link: '#services'
+    link: '#business-websites'
   },
   { 
     title: 'ERP Systems', 
@@ -15,17 +15,12 @@ const services = [
     desc: 'We implement smart ERP solutions that connect and streamline your business operations in one centralized system.',
     link: '#erp'
   },
+
   { 
-    title: 'Web & Mobile Apps', 
-    icon: <Smartphone />,
-    desc: 'We develop custom web and mobile applications tailored to your business needs, enhancing user experience.',
-    link: '#web-mobile-apps'
-  },
-  { 
-    title: 'AI Solutions', 
-    icon: <Code />,
-    desc: 'Intelligent AI solutions that help businesses automate communication, generate content, and improve decision-making.',
-    link: '#ai-solutions'
+    title: 'Branding', 
+    icon: <PenTool />,
+    desc: 'We craft cohesive, memorable identities that resonate with your target audience and stand out in the crowded digital landscape.',
+    link: '#branding'
   },
   { 
     title: 'SFMS Solution', 
