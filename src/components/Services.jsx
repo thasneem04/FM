@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Smartphone, ShoppingBag, Zap, Code } from 'lucide-react';
+import { Monitor, Smartphone, ShoppingBag, Zap, Code, Megaphone } from 'lucide-react';
 
 const services = [
   { 
@@ -19,14 +19,19 @@ const services = [
     desc: 'We develop custom web and mobile applications tailored to your business needs, enhancing user experience.'
   },
   { 
-    title: 'AI Automation', 
+    title: 'AI Solutions', 
     icon: <Code />,
-    desc: 'We develop intelligent automation systems using AI to optimize workflows and provide data-driven insights.'
+    desc: 'Intelligent AI solutions that help businesses automate communication, generate content, and improve decision-making.'
   },
   { 
     title: 'SFMS Solution', 
     icon: <Zap />,
     desc: 'Advanced field service management solutions to organize and monitor service operations efficiently.'
+  },
+  { 
+    title: 'Digital Marketing', 
+    icon: <Megaphone />,
+    desc: 'Result-driven digital marketing strategies that help businesses increase visibility, reach more customers, and grow their brand online.'
   },
 ];
 

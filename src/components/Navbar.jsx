@@ -23,20 +23,14 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About', href: isHome ? '#about' : '/#about' },
+    { name: 'Services', href: isHome ? '#services' : '/#services' },
     { name: 'SFMS', href: isHome ? '#sfms' : '/#sfms' },
     { name: 'ERP', href: isHome ? '#erp' : '/#erp' },
-  ];
-
-  const serviceItems = [
-    { name: 'Digital Marketing', href: isHome ? '#services' : '/#services' },
-    { name: 'Web Development', href: isHome ? '#services' : '/#services' },
-    { name: 'Branding', href: isHome ? '#services' : '/#services' },
-    { name: 'Collaborate With Us', href: '/collaborate', highlight: true },
+    { name: 'AI Automation', href: isHome ? '#ai-automation' : '/#ai-automation' },
   ];
 
   const handleLinkClick = () => {
     setIsOpen(false);
-    setDropdownOpen(false);
   };
 
   return (
@@ -79,114 +73,35 @@ const Navbar = () => {
           </a>
         ))}
 
-        {/* Services Dropdown */}
-        <div 
-          style={{ position: 'relative' }}
-          onMouseEnter={() => setDropdownOpen(true)}
-          onMouseLeave={() => setDropdownOpen(false)}
+        <Link 
+          to="/collaborate"
+          style={{ color: '#666666', fontSize: '0.9rem', fontWeight: 600, transition: 'color 0.3s', textDecoration: 'none' }}
+          onMouseOver={(e) => e.currentTarget.style.color = red}
+          onMouseOut={(e) => e.currentTarget.style.color = '#666666'}
         >
-          <div style={{ 
-            color: '#666666', 
-            fontSize: '0.9rem', 
-            fontWeight: 800, 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '0.3rem', 
-            cursor: 'pointer',
-            padding: '10px 0'
-          }}>
-            Services <ChevronDown size={14} />
-          </div>
+          Collaborate With Us
+        </Link>
 
-          <AnimatePresence>
-            {dropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                style={{
-                  position: 'absolute',
-                  top: '100%',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: '#FFF',
-                  minWidth: '220px',
-                  borderRadius: '16px',
-                  boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
-                  padding: '1rem',
-                  border: '1px solid #F0F0F0',
-                  marginTop: '10px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.5rem'
-                }}
-              >
-                {serviceItems.map((item) => (
-                  item.highlight ? (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={handleLinkClick}
-                      style={{
-                        padding: '0.8rem 1rem',
-                        borderRadius: '8px',
-                        fontSize: '0.85rem',
-                        fontWeight: 800,
-                        color: '#FFF',
-                        background: red,
-                        textDecoration: 'none',
-                        textAlign: 'center'
-                      }}
-                    >
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      onClick={handleLinkClick}
-                      style={{
-                        padding: '0.8rem 1rem',
-                        borderRadius: '8px',
-                        fontSize: '0.85rem',
-                        fontWeight: 600,
-                        color: '#1A1A1A',
-                        textDecoration: 'none',
-                        transition: 'all 0.2s ease',
-                      }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.background = 'rgba(237, 28, 36, 0.05)';
-                        e.currentTarget.style.color = red;
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.color = '#1A1A1A';
-                      }}
-                    >
-                      {item.name}
-                    </a>
-                  )
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        <a 
-          href={isHome ? "#cta" : "/#cta"}
-          style={{
-            background: red,
-            color: '#FFFFFF',
-            padding: '0.8rem 1.8rem',
-            borderRadius: '50px',
-            fontSize: '0.9rem',
-            fontWeight: 700,
-            textDecoration: 'none',
-            boxShadow: `0 10px 20px rgba(237, 28, 36, 0.2)`
-          }}
-        >
-          Start Project
-        </a>
+        {!isHome && (
+          <Link 
+            to="/"
+            style={{
+              background: red,
+              color: '#FFFFFF',
+              padding: '0.8rem 1.8rem',
+              borderRadius: '50px',
+              fontSize: '0.9rem',
+              fontWeight: 700,
+              textDecoration: 'none',
+              boxShadow: `0 10px 20px rgba(237, 28, 36, 0.2)`,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}
+          >
+            ← Back to Home
+          </Link>
+        )}
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -278,53 +193,35 @@ const Navbar = () => {
                   </a>
                 ))}
 
-                <div style={{ borderTop: '1px solid #EEE', paddingTop: '1.5rem', marginTop: '1rem' }}>
-                  <div style={{ fontSize: '0.8rem', color: '#999', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 700, marginBottom: '1.5rem' }}>
-                    Services
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                    {serviceItems.map((item) => (
-                      item.highlight ? (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          onClick={handleLinkClick}
-                          style={{ fontSize: '1.1rem', color: red, fontWeight: 800, textDecoration: 'none' }}
-                        >
-                          {item.name}
-                        </Link>
-                      ) : (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          onClick={handleLinkClick}
-                          style={{ fontSize: '1.1rem', color: '#1A1A1A', fontWeight: 600, textDecoration: 'none' }}
-                        >
-                          {item.name}
-                        </a>
-                      )
-                    ))}
-                  </div>
-                </div>
-
-                <a 
-                  href={isHome ? "#cta" : "/#cta"}
+                <Link
+                  to="/collaborate"
                   onClick={handleLinkClick}
-                  style={{ 
-                    background: red,
-                    color: '#FFF', 
-                    fontSize: '1.1rem', 
-                    fontWeight: 800,
-                    padding: '1rem',
-                    borderRadius: '16px',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                    marginTop: '1.5rem',
-                    boxShadow: '0 10px 20px rgba(237,28,36,0.2)'
-                  }}
+                  style={{ fontSize: '1.3rem', color: '#1A1A1A', fontWeight: 800, textDecoration: 'none' }}
                 >
-                  Start Project →
-                </a>
+                  Collaborate With Us
+                </Link>
+
+                {!isHome && (
+                  <Link 
+                    to="/"
+                    onClick={handleLinkClick}
+                    style={{ 
+                      background: red,
+                      color: '#FFF', 
+                      fontSize: '1.1rem', 
+                      fontWeight: 800,
+                      padding: '1rem',
+                      borderRadius: '16px',
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      marginTop: '1.5rem',
+                      boxShadow: '0 10px 20px rgba(237,28,36,0.2)',
+                      display: 'block'
+                    }}
+                  >
+                    ← Back to Home
+                  </Link>
+                )}
               </div>
             </motion.div>
           </>

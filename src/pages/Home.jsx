@@ -4,6 +4,10 @@ import About from '../components/About';
 import Services from '../components/Services';
 import SFMS from '../components/SFMS';
 import OdooERP from '../components/OdooERP';
+import DigitalMarketing from '../components/DigitalMarketing';
+import AiSolutions from '../components/AiSolutions';
+import AiAutomation from '../components/AiAutomation';
+import ErpSolutions from '../components/ErpSolutions';
 import WhyChooseUs from '../components/WhyChooseUs';
 import SupportingServices from '../components/SupportingServices';
 import Process from '../components/Process';
@@ -17,7 +21,11 @@ const Home = () => {
       <Hero />
       <About />
       <Services />
+      <DigitalMarketing />
+      <AiSolutions />
+      <AiAutomation />
       <SFMS />
+      <ErpSolutions />
       <OdooERP />
       <Process />
       <WhyChooseUs />

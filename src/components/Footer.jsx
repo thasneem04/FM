@@ -43,7 +43,7 @@ const Footer = () => {
            <div style={{ color: '#CCCCCC', fontSize: '0.95rem', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
              <p>Phone: +91 - 99944 92770</p>
              <p>WhatsApp: +91 - 99944 92770</p>
-             <p>Web: www.fictionmaster.com</p>
+             <p>Web: www.fictionmastery.com</p>
            </div>
            <div style={{ display: 'flex', gap: '1.2rem', marginTop: '1.8rem' }}>
              <a href="#" className="social-link" style={{ color: '#999999' }}><Youtube size={22} /></a>
