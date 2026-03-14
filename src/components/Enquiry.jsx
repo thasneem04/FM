@@ -86,10 +86,14 @@ const Enquiry = () => {
                   <option value="" disabled>
                     Select a service
                   </option>
-                  <option value="website">Website</option>
-                  <option value="ecommerce">E-commerce</option>
+                  <option value="website">Website & E-commerce</option>
+                  <option value="erp">ERP Systems</option>
+                  <option value="web-mobile">Web & Mobile Apps</option>
                   <option value="branding">Branding</option>
-                  <option value="marketing">Marketing</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="social-media">Social Media Management</option>
+                  <option value="ai-solutions">AI Solutions & Automation</option>
+                  <option value="sfms">SFMS</option>
                   <option value="other">Other</option>
                 </select>
               </label>

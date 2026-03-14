@@ -28,6 +28,7 @@ const Navbar = () => {
     { name: 'SFMS', href: isHome ? '#sfms' : '/#sfms' },
     { name: 'ERP', href: isHome ? '#erp' : '/#erp' },
     { name: 'AI Automation', href: isHome ? '#ai-automation' : '/#ai-automation' },
+    { name: 'Contact', href: isHome ? '#cta' : '/#cta' },
   ];
 
   const handleLinkClick = () => {
