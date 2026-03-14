@@ -22,7 +22,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: isHome ? '#home' : '/#home' },
+    { name: 'Home', href: isHome ? '#about' : '/#about' },
     { name: 'Services', href: isHome ? '#services' : '/#services' },
     { name: 'Branding', href: isHome ? '#branding' : '/#branding' },
     { name: 'SFMS', href: isHome ? '#sfms' : '/#sfms' },
